@@ -1,11 +1,7 @@
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
-import static org.hamcrest.Matchers.notNullValue;
 
 public class NegativeTests {
     public static Response response;
@@ -61,7 +57,7 @@ public class NegativeTests {
         response.then().body("error.info", containsString("You have provided one or more invalid Currency Codes"));
     }
     @Test
-    public void nonExistingAPITest() {
+    public void APINotExistErrorTest() {
         String currencies = "RUB";
         response = given().get(Constans.URL + "/stock" + Constans.TOKEN + "&currencies=" + currencies);
         System.out.println(response.asString());
