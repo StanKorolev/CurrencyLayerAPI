@@ -34,7 +34,6 @@ public class EndPointsTests {
         response.then().statusCode(200);
     }
 
-
     @Test
     public void liveRateSpecificCurrencyTest() {
         String currencies = "CAD,EUR,NIS,RUB";
